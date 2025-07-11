@@ -1,8 +1,10 @@
 
 # X509CertificateMaker
-X509 Certificate Creation
+X509 Certificate Creation 
+* Leverages BouncyCastle under the hood. 
 
 Simple Library for creating Self Signed X509 Certificates with RSA Privake Key. 
+This project arose from a need to create a bunch of certs for some local apps.
 
 ## Use
 
