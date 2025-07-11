@@ -2,7 +2,7 @@
 # X509CertificateMaker
 X509 Certificate Creation
 
-Simple Library for creating Self Signed X509 Certificates with the Privake Key. 
+Simple Library for creating Self Signed X509 Certificates with RSA Privake Key. 
 
 ## Use
 
