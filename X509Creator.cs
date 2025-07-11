@@ -82,18 +82,14 @@ namespace X509CertificateMaker
             // Create store entry
             store.SetKeyEntry(friendlyName,
                 new AsymmetricKeyEntry(privateKey),
-                new[]
-                {
+                [
                     certEntry
-                });
+                ]);
 
             // Save the Cert
-            using (var pkcs12Stream = new MemoryStream())
-            {
-                store.Save(pkcs12Stream, password.ToCharArray(), new SecureRandom(new CryptoApiRandomGenerator()));
-                return Pkcs12Utilities.ConvertToDefiniteLength(pkcs12Stream.ToArray(), password.ToCharArray());
-            }
-
+            using var pkcs12Stream = new MemoryStream();
+            store.Save(pkcs12Stream, password.ToCharArray(), new SecureRandom(new CryptoApiRandomGenerator()));
+            return Pkcs12Utilities.ConvertToDefiniteLength(pkcs12Stream.ToArray(), password.ToCharArray());
         }
     }
 }
